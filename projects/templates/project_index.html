@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% load static %}
+{% block page_content %}
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  display: flex;
+}
+
+/* Create two equal columns that sits next to each other */
+.column {
+  /*flex: 50%;*/
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+</style>
+<style type="text/css">
+    #centercontainer {
+        position:absolute;
+        top:50%;
+        height:300px;
+        margin-top:-230px
+    }
+</style>
+</head>
+<body>
+
+<div class="row">
+  <div class="column" >
+    <p style="text-align: right"><img style="width: 245px; height: 247px;" alt="Image description" src="{% static 'img/me.jpg' %}"></p>
+  </div>
+  <div class="column"><div id="centercontainer">
+      <p>
+      <b>Machine Learning: </b>Keras + Pytorch + TensorFlow + Numpy + MatplotLib + Sci-kit Learn + Seaborn <br>
+      <b>Web Dev: </b>Python + Django + Boostrap + CSS + HTML <br>
+      <b>Workflow: </b>Github + Kaggle + Jupyter Notebooks + Google Colab + Sublime Text 3 + XCode <br>
+      <b>Game Dev: </b> Objective-C + Lua + .Rblx + Cocoas2D <br>
+    </p>
+  </div></div>
+</div>
+
+</body>
+</html>
+
+<h1>Software Projects</h1>
+<div class="row">
+{% for project in projects %}
+    <div class="col-md-4">
+        <div class="card mb-2">
+            <img class="card-img-top" src="{% static project.image %}">
+            <div class="card-body">
+                <h5 class="card-title">{{ project.title }}</h5>
+                <p class="card-text">{{ project.description }}</p>
+                <a href="{% url 'project_detail' project.pk %}"
+                   class="btn btn-primary">
+                    Read More
+                </a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
