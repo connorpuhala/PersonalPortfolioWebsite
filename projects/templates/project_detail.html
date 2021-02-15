@@ -10,6 +10,9 @@
     <div class="col-md-4">
         <h5>About the project:</h5>
         <p>{{ project.description }}</p>
+        {% if project.pk == 3 %}
+            <a href="https://www.roblox.com/games/5935136733/Bushman-BETA" target="_blank">Bushman</a> <br> <br>
+        {% endif %}
         <br>
         <h5>Technology used:</h5>
         <p>{{ project.technology }}</p>

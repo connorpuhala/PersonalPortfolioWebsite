@@ -36,11 +36,12 @@
     <p style="text-align: right"><img style="width: 245px; height: 247px;" alt="Image description" src="{% static 'img/me.jpg' %}"></p>
   </div>
   <div class="column"><div id="centercontainer">
-      <p>
+    <p>
       <b>Machine Learning: </b>Keras + Pytorch + TensorFlow + Numpy + MatplotLib + Sci-kit Learn + Seaborn <br>
       <b>Web Dev: </b>Python + Django + Bootstrap + CSS + HTML <br>
-      <b>Workflow: </b>Github + Kaggle + Jupyter Notebooks + Google Colab + Sublime Text 3 + XCode <br>
-      <b>Game Dev: </b> Objective-C + Lua + .Rbxlx + Cocoas2D <br>
+      <b>iOS: </b>Objective-C + XCode <br>
+      <b>Workflow: </b>Github + Kaggle + Jupyter Notebooks + Google Colab + Visual Code 3 <br>
+      <b>Game Dev: </b>Lua + .Rbxlx + Cocoas2D <br>
     </p>
   </div></div>
 </div>
@@ -49,7 +50,9 @@
 </html>
 
 <h1>Software Projects</h1>
+
 <div class="row">
+  
 {% for project in projects %}
     <div class="col-md-4">
         <div class="card mb-2">
@@ -57,6 +60,9 @@
             <div class="card-body">
                 <h5 class="card-title">{{ project.title }}</h5>
                 <p class="card-text">{{ project.description }}</p>
+                {% if project.pk == 3 %}
+                <a href="https://www.roblox.com/games/5935136733/Bushman-BETA" target="_blank">Bushman</a> <br> <br>
+                {% endif %}
                 <a href="{% url 'project_detail' project.pk %}"
                    class="btn btn-primary">
                     Read More
