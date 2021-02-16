@@ -1,5 +1,5 @@
 # My Personal Portfolio Website
-Live at connorpuhala.com  
+Live at http://connorpuhala.com  
 
 Built with Python + Django + Bootstap + PostgreSQL, hosted on Heroku.  
 
