@@ -14,3 +14,9 @@ def project_detail(request, pk):
         'project': project
     }
     return render(request, 'project_detail.html', context)
+
+def about_page(request):
+    return render(request, 'about_page.html')
+
+def story(request):
+    return render(request, 'story.html')
